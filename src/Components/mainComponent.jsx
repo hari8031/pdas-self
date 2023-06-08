@@ -24,7 +24,7 @@ const MainComponent = () => {
     <>
       <NavComponent />
       <div className="container">
-        <div className="d-flex flex-row mb-3 justify-content-center">
+        <div className="card-container">
           <CardComponent
             title={data.apple.title}
             description={data.apple.description}
@@ -39,6 +39,26 @@ const MainComponent = () => {
           />
         </div>
       </div>
+      <style jsx>{`
+        .container {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .card-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+          .card-container {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      `}</style>
     </>
   );
 };
